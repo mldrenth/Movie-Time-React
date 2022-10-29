@@ -7,25 +7,26 @@ interface MovieListProps {
     movieListTitle: string
 
 }
+const MovielistTitle = styled.h1`
+text-align: left;
+font-size: 2rem;
+`
 
-const MovieList: React.FC<MovieListProps> = ({movies, movieListTitle}) => {
-    const MovielistTitle = styled.h1 `
-        text-align: left;
-        font-size: 2rem;
-    `
+const MovieList: React.FC<MovieListProps> = ({ movies, movieListTitle }) => {
+
     const movieItems = movies.map((movie, index) => {
         return <MovieItem movie={movie} key={index} />
     })
 
-return (
-    <>
-    <MovielistTitle>{movieListTitle}</MovielistTitle>
-    <div className=" d-flex flex-row flex-wrap ">
-    {movieItems}
-    </div>
-    
-    </>
-)
+    return (
+        <>
+            <MovielistTitle>{movieListTitle}</MovielistTitle>
+            <div className=" d-flex flex-row flex-wrap ">
+                {movieItems}
+            </div>
+
+        </>
+    )
 
 }
 
