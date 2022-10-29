@@ -1,10 +1,10 @@
 import MovieResult from "../types/MovieResult"
 
-export interface MovieItemProps {
+interface MovieItemProps {
     movie: MovieResult
 }
 
-export const MovieItem: React.FC<MovieItemProps> = ({movie}) => {
+ const MovieItem: React.FC<MovieItemProps> = ({movie}) => {
     const imagePath: string = "https://image.tmdb.org/t/p/w500/" + movie.poster_path
     return (
         <>
@@ -12,4 +12,6 @@ export const MovieItem: React.FC<MovieItemProps> = ({movie}) => {
         </>
     )
 } 
+
+export default MovieItem;
 

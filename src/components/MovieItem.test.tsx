@@ -1,4 +1,4 @@
-import { MovieItem } from "../components/MovieItem"
+import  MovieItem  from "../components/MovieItem"
 import { render } from "@testing-library/react"
 import IMovieResult from "../types/MovieResult"
 
