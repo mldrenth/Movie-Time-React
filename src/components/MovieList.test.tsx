@@ -1,6 +1,7 @@
 import MovieList from "./MovieList";
 import { render, screen } from "@testing-library/react";
 import IMovieResult from "../types/MovieResult";
+import { MemoryRouter } from 'react-router-dom';
 
 const testMovies: IMovieResult[] = [
     {
@@ -66,11 +67,11 @@ const testMovies: IMovieResult[] = [
 
 describe("<MovieList />", () => {
     it("Should have a movie list title", () => {
-        render(<MovieList movies={testMovies} movieListTitle={"Test Title"} />)
+        render(<MovieList movies={testMovies} movieListTitle={"Test Title"} />, {wrapper: MemoryRouter})
         expect(screen.getByText("Test Title").textContent).toContain("Test Title")
     }) 
     it("Should have three movie items", async () => {
-        render(<MovieList movies={testMovies} movieListTitle={"Test Title"} />)
+        render(<MovieList movies={testMovies} movieListTitle={"Test Title"} />, {wrapper: MemoryRouter})
         expect(screen.getAllByRole("img").length).toBe(3)
     })
 })

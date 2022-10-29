@@ -1,6 +1,7 @@
 import  MovieItem  from "../components/MovieItem"
 import { render } from "@testing-library/react"
 import IMovieResult from "../types/MovieResult"
+import { MemoryRouter } from 'react-router-dom';
 
 const testMovie: IMovieResult = {
     "adult": false,
@@ -24,7 +25,7 @@ const testMovie: IMovieResult = {
 
 describe("<MovieItem />", () => {
     it("Should render image", async () => {
-        const { getByAltText } = await render(<MovieItem movie={testMovie} />)
+        const { getByAltText } = await render(<MovieItem movie={testMovie} />, {wrapper: MemoryRouter})
         // eslint-disable-next-line testing-library/prefer-screen-queries
         const image = getByAltText('moviepicture-Terrifier 2')
         expect(image).toHaveAttribute('src', "https://image.tmdb.org/t/p/w500//yw8NQyvbeNXoZO6v4SEXrgQ27Ll.jpg")
