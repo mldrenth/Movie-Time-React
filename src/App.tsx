@@ -1,14 +1,18 @@
+import HomePage from './pages/HomePage';
+import MoviesPage from './pages/MoviesPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import './App.css';
-import HomeScreenList from './container/HomeScreenList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <HomeScreenList/>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path="movies" element={<MoviesPage/>} >
+        <Route path=":number" element={<MoviesPage/>} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
