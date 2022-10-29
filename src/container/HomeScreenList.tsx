@@ -12,12 +12,11 @@ const HomeScreenList = () => {
      })
     }, [])
 
-    console.log(popularMovies)
 
     return (
-        <>
-        <MovieList movies={popularMovies}/>
-        </>
+        <div className='h-50'>
+        <MovieList movies={popularMovies} movieListTitle={"Popular Movies"}/>
+        </div>
     )
 }
 

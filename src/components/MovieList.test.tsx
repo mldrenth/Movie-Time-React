@@ -7,8 +7,8 @@ const testMovies: IMovieResult[] = [
         "adult": false,
         "backdrop_path": "/y5Z0WesTjvn59jP6yo459eUsbli.jpg",
         "genre_ids": [
-        27,
-        53
+            27,
+            53
         ],
         "id": 663712,
         "original_language": "en",
@@ -21,14 +21,14 @@ const testMovies: IMovieResult[] = [
         "video": false,
         "vote_average": 7.4,
         "vote_count": 176
-        },
-        {
+    },
+    {
         "adult": false,
         "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
         "genre_ids": [
-        28,
-        878,
-        14
+            28,
+            878,
+            14
         ],
         "id": 436270,
         "original_language": "en",
@@ -41,14 +41,14 @@ const testMovies: IMovieResult[] = [
         "video": false,
         "vote_average": 7.1,
         "vote_count": 580
-        },
-        {
+    },
+    {
         "adult": false,
         "backdrop_path": "/tIX6j3NzadlwGcJ52nuWdmtOQkg.jpg",
         "genre_ids": [
-        27,
-        53,
-        9648
+            27,
+            53,
+            9648
         ],
         "id": 717728,
         "original_language": "en",
@@ -61,12 +61,16 @@ const testMovies: IMovieResult[] = [
         "video": false,
         "vote_average": 5.8,
         "vote_count": 378
-        }
+    }
 ]
 
 describe("<MovieList />", () => {
+    it("Should have a movie list title", () => {
+        render(<MovieList movies={testMovies} movieListTitle={"Test Title"} />)
+        expect(screen.getByText("Test Title").textContent).toContain("Test Title")
+    }) 
     it("Should have three movie items", async () => {
-        render(<MovieList movies={testMovies}/>)
+        render(<MovieList movies={testMovies} movieListTitle={"Test Title"} />)
         expect(screen.getAllByRole("img").length).toBe(3)
     })
 })
