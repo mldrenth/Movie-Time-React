@@ -9,6 +9,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Dependencies
         run: npm install
+      - name: Create Secrets file
+        run: touch src/services/apikey.ts
+      - name: Add API key
+        uses: src/services/apikey.ts
+        contents: |
+           export const apikey: string = ${{secret.API_KEY}}
       - name: Run unit tests
         run: npm run test
 
