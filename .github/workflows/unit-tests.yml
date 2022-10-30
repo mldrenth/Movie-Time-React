@@ -12,9 +12,12 @@ jobs:
       - name: Create Secrets file
         run: touch src/services/apikey.ts
       - name: Add API key
-        uses: src/services/apikey.ts
-        contents: |
-           export const apikey: string = ${{secret.API_KEY}}
+        uses: "DamianReeves/write-file-action@master"
+        with:
+          path: src/services/apikey.ts
+          write-mode: preserve
+          contents: |
+          export const apikey: string = ${{secret.API_KEY}}
       - name: Run unit tests
         run: npm run test
 
