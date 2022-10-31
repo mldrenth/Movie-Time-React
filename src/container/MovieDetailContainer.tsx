@@ -19,7 +19,7 @@ const MovieDetailContainer: React.FC<IMovieDetailContainerProps> = ({ movie }) =
     }, [movie])
     return (
         <div className='d-flex flex-column bg-darkblue'>
-            {videoKey ? <iframe className='vh-50' src={`https://www.youtube.com/embed/${videoKey}`} title='youtub-video' /> : null}
+            {videoKey ? <iframe className='vh-50' src={`https://www.youtube.com/embed/${videoKey}`} title='youtube-video' /> : null}
             <div className='d-flex flex-row p-5 '>
                 <MovieSidebar movie={movie} />
                 <div className=" px-4 d-flex flex-column">
