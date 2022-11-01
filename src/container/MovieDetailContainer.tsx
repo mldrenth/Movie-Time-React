@@ -15,6 +15,8 @@ const MovieDetailContainer: React.FC<IMovieDetailContainerProps> = ({ movie }) =
     useEffect(() => {
         getVideoKey(movie?.id).then((response: any) => {
             setVideoKey(response.data.results[0].key)
+        }).catch((err: Error) => {
+            console.log(err)
         })
     }, [movie])
     return (

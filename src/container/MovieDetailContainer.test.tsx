@@ -15,7 +15,6 @@ describe("<MovieDetailContainer/>", () => {
         
         await waitFor(async () => {
             video = await screen.findByTitle("youtube-video")
-            jest.setTimeout(10000)
             expect(video).toBeInTheDocument()}, {timeout: 10000})
     })
 })
