@@ -15,6 +15,6 @@ describe("<MovieDetailContainer/>", () => {
         
         await waitFor(async () => {
             video = await screen.findByTitle("youtube-video")
-            expect(video).toBeInTheDocument()})
+            expect(video).toBeInTheDocument()}, {timeout: 5000})
     })
 })
