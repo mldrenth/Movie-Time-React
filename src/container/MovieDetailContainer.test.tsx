@@ -11,7 +11,7 @@ describe("<MovieDetailContainer/>", () => {
     it("Should render movie after fetch", async () => {
         render(<MovieDetailContainer movie={testMovie} />)
         let video: HTMLIFrameElement;
-        await waitFor(() => video = screen.getByTitle("youtube-video"))
+        video = await screen.findByTitle("youtube-video")
         await waitFor(() => expect(video).toBeInTheDocument())
     })
 })

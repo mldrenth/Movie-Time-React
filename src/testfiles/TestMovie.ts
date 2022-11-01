@@ -2,20 +2,21 @@ import IMovieResult from "../types/MovieResult"
 
 export const testMovie: IMovieResult = {
     "adult": false,
-    "backdrop_path": "/y5Z0WesTjvn59jP6yo459eUsbli.jpg",
+    "backdrop_path": "/lXhgCODAbBXL5buk9yEmTpOoOgR.jpg",
     "genre_ids": [
-        27,
-        53
+    12,
+    14,
+    28
     ],
-    "id": 663712,
+    "id": 122,
     "original_language": "en",
-    "original_title": "Terrifier 2",
-    "overview": "After being resurrected by a sinister entity, Art the Clown returns to Miles County where he must hunt down and destroy a teenage girl and her younger brother on Halloween night.  As the body count rises, the siblings fight to stay alive while uncovering the true nature of Art's evil intent.",
-    "popularity": 5162.285,
-    "poster_path": "/yw8NQyvbeNXoZO6v4SEXrgQ27Ll.jpg",
-    "release_date": "2022-10-06",
-    "title": "Terrifier 2",
+    "original_title": "The Lord of the Rings: The Return of the King",
+    "overview": "Aragorn is revealed as the heir to the ancient kings as he, Gandalf and the other members of the broken fellowship struggle to save Gondor from Sauron's forces. Meanwhile, Frodo and Sam take the ring closer to the heart of Mordor, the dark lord's realm.",
+    "popularity": 142.844,
+    "poster_path": "/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+    "release_date": "2003-12-01",
+    "title": "The Lord of the Rings: The Return of the King",
     "video": false,
-    "vote_average": 7.4,
-    "vote_count": 176
-}
+    "vote_average": 8.5,
+    "vote_count": 20448
+    }
