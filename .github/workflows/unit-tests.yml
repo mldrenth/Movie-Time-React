@@ -9,15 +9,11 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Dependencies
         run: npm install
-      - name: Create Secrets file
-        run: touch src/services/apikey.ts
-      - name: Add API key
-        uses: "DamianReeves/write-file-action@master"
-        with:
-          path: src/services/apikey.ts
-          write-mode: preserve
-          contents: |
-            export const apikey: string = ${{secrets.API_KEY}}
+      - name: "Create env file"
+        run: |
+          touch .env
+          echo MOVIEDB_API_KEY=${{secrets.API_KEY}}
+          cat .env
       - name: Run unit tests
         run: npm run test
 
