@@ -12,7 +12,7 @@ jobs:
       - name: "Create env file"
         run: |
           touch .env
-          echo MOVIEDB_API_KEY=${{secrets.API_KEY}}
+          echo REACT_APP_MOVIEDB_API_KEY=${{secrets.API_KEY}}
           cat .env
       - name: Run unit tests
         run: npm run test

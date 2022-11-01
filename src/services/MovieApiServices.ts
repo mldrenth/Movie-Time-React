@@ -1,7 +1,7 @@
 import http from "./https-common";
 import ApiRequestResult from "../types/ApiRequestResult"
 
-const apikey = process.env.MOVIEDB_API_KEY
+const apikey = process.env.REACT_APP_MOVIEDB_API_KEY
 
 export const getPopularMovies = () => {
     return http.get<ApiRequestResult>(`/movie/popular?api_key=${apikey}&language=en-US&page=1`)
